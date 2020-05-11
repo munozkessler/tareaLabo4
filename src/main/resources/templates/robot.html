@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmins:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Soy robot?</title>
+
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+
+<!-- Page level plugin CSS-->
+<link href="vendor/datatables/dataTables.bootstrap4.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template-->
+<link href="css/sb-admin.css" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/b20aef55a4.js" crossorigin="anonymous"></script>
+
+</head>
+<body style = "background-color:#FFFFFF;">
+
+	<form th:action="@{/seguridad}" th:object="${robot}" method="post">
+		<div class="form-group">
+			<label class="h2" style = "color:#3b5998;">Marcar solo si usted es un robot</label>
+			
+			<input type="radio" th:field="*{soyRobot}" th:value="${false}" >
+			<span th:errors="*{soyRobot}" style="color:#E81505;" class="alert alert-danger" role = "alert"></span><br>
+		
+			<input type="submit" value="Aceptar" class="btn btn-success">
+		</div>
+	</form>
+
+	<a href="/producto" class="btn btn-warning">Regresar</a>
+	
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmins:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Venta de Producto</title>
+
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+
+<!-- Page level plugin CSS-->
+<link href="vendor/datatables/dataTables.bootstrap4.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template-->
+<link href="css/sb-admin.css" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/b20aef55a4.js" crossorigin="anonymous"></script>
+
+</head>
+<body style = "background-color:#FFFFFFFF;">
+
+<h1 class="display-4" style = "color:#3b5998;">Ingresar Producto</h1>
+
+	<form th:action="@{/formProducto}" th:object="${producto}" method="post">
+		<div class="form-group">
+			<label style = "color:#8b9dc3">Nombre del producto:</label>
+			
+			<input type="text" th:field="*{nombre}" class="form-control" placeholder = "Ej: Alas Buffalo" style = "background-color:#f7f7f7;"><br>
+			<span th:errors="*{nombre}" style="color:#E81505;" class="alert alert-danger" role = "alert"></span><br>
+			<br>
+			<label style = "color:#8b9dc3">Descripcion del producto:</label>
+			
+			<input type="text" th:field="*{descripcion}" class="form-control" placeholder = "Ej: orden de 12 unidades. Salsa picante" style = "background-color:#f7f7f7;"><br>
+			<span th:errors="*{descripcion}" style="color:#E81505;" class="alert alert-danger" role = "alert"></span><br>
+			<br>
+			<label style = "color:#8b9dc3">Precio del producto:</label>
+			
+			<input type="number" th:field="*{precio}" class="form-control" placeholder = "Ej: 12" style = "background-color:#f7f7f7;"><br>
+			<span th:errors="*{precio}" style="color:#E81505;" class="alert alert-danger" role = "alert"></span><br>
+			<br>
+			<label style = "color:#8b9dc3">Fecha de vencimiento del producto:</label>
+			
+			<input type="text" th:field="*{vencimiento}" class="form-control" placeholder = "Ej: 01/01/2020" style = "background-color:#f7f7f7;">
+			<span th:errors="*{vencimiento}" style="color:#E81505;" role = "alert"></span><br>
+			<br>
+			<input type="submit" value="Agregar Producto" class="btn btn-primary">
+		</div>
+	</form>
+	
+</body>
+</html>
